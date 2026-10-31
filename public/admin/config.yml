@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR-USERNAME/zorvoweb   # change before deploying
+  repo: webzorvo/zorvoweb   # change before deploying
   branch: main
 local_backend: true              # local editing: run `npm run cms`
 media_folder: public/uploads
