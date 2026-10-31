@@ -14,26 +14,82 @@ collections:
         file: src/data/site.json
         format: json
         fields:
-          - {name: name, label: Brand name, widget: string}
-          - {name: tagline, label: Tagline, widget: string}
-          - {name: heroTitle, label: Home headline, widget: string}
-          - {name: heroText, label: Home intro text, widget: text}
-          - {name: about, label: About text, widget: text}
-          - {name: founder, label: Founder name, widget: string}
-          - {name: email, label: Email, widget: string}
-          - {name: phone, label: Phone, widget: string}
-          - {name: whatsapp, label: WhatsApp (digits only, no +), widget: string}
-          - {name: address, label: Location, widget: string}
-          - {name: web3formsKey, label: Web3Forms access key, widget: string}
-          - {name: facebook, label: Facebook URL, widget: string, required: false}
-          - {name: instagram, label: Instagram URL, widget: string, required: false}
-          - {name: linkedin, label: LinkedIn URL, widget: string, required: false}
+          - {name: name, label: "Brand name", widget: string}
+          - {name: tagline, label: "Tagline", widget: string}
+          - {name: heroTitle, label: "Home headline", widget: string}
+          - {name: heroText, label: "Home intro text", widget: text}
+          - {name: about, label: "About text", widget: text}
+          - {name: founder, label: "Founder name", widget: string}
+          - {name: email, label: "Email", widget: string}
+          - {name: phone, label: "Phone", widget: string}
+          - {name: whatsapp, label: "WhatsApp (digits only", no +), widget: string}
+          - {name: address, label: "Location", widget: string}
+          - {name: web3formsKey, label: "Web3Forms access key", widget: string}
+          - {name: facebook, label: "Facebook URL", widget: string, required: false}
+          - {name: instagram, label: "Instagram URL", widget: string, required: false}
+          - {name: linkedin, label: "LinkedIn URL", widget: string, required: false}
           - name: stats
             label: Stats bar
             widget: list
             fields:
-              - {name: value, label: Value, widget: string}
-              - {name: label, label: Label, widget: string}
+              - {name: value, label: "Value", widget: string}
+              - {name: label, label: "Label", widget: string}
+      - name: seo
+        label: SEO Settings
+        file: src/data/seo.json
+        format: json
+        fields:
+          - {name: siteUrl, label: "Website address (e.g. https://yourdomain.com - no slash at the end)", widget: string}
+          - {name: defaultDescription, label: "Default description (used when a page has none)", widget: text}
+          - {name: ogImage, label: "Default share image (1200x630)", widget: image, required: false}
+          - {name: gaId, label: "Google Analytics ID (G-XXXXXXX)", widget: string, required: false}
+          - {name: gsc, label: "Google Search Console verification code", widget: string, required: false}
+          - name: pages
+            label: Page SEO (title and description for each page)
+            widget: object
+            fields:
+              - name: home
+                label: Home page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: services
+                label: Services page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: portfolio
+                label: Portfolio page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: pricing
+                label: Pricing page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: about
+                label: About page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: contact
+                label: Contact page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
+              - name: blog
+                label: Blog page
+                widget: object
+                fields:
+                  - {name: title, label: "SEO title (50-60 characters)", widget: string}
+                  - {name: description, label: "Meta description (120-160 characters)", widget: text}
       - name: services
         label: Services
         file: src/data/services.json
@@ -43,8 +99,8 @@ collections:
             label: Services
             widget: list
             fields:
-              - {name: title, label: Title, widget: string}
-              - {name: desc, label: Description, widget: text}
+              - {name: title, label: "Title", widget: string}
+              - {name: desc, label: "Description", widget: text}
       - name: process
         label: Process Steps
         file: src/data/process.json
@@ -54,8 +110,8 @@ collections:
             label: Steps
             widget: list
             fields:
-              - {name: title, label: Title, widget: string}
-              - {name: desc, label: Description, widget: text}
+              - {name: title, label: "Title", widget: string}
+              - {name: desc, label: "Description", widget: text}
       - name: portfolio
         label: Portfolio
         file: src/data/portfolio.json
@@ -65,24 +121,24 @@ collections:
             label: Projects
             widget: list
             fields:
-              - {name: title, label: Title, widget: string}
-              - {name: type, label: Type, widget: string}
-              - {name: desc, label: Description, widget: text}
-              - {name: url, label: Live demo URL (blank if none), widget: string, required: false}
+              - {name: title, label: "Title", widget: string}
+              - {name: type, label: "Type", widget: string}
+              - {name: desc, label: "Description", widget: text}
+              - {name: url, label: "Live demo URL (blank if none)", widget: string, required: false}
       - name: packages
         label: Pricing Packages
         file: src/data/packages.json
         format: json
         fields:
-          - {name: note, label: Pricing note, widget: string}
+          - {name: note, label: "Pricing note", widget: string}
           - name: items
             label: Packages
             widget: list
             fields:
-              - {name: name, label: Name, widget: string}
-              - {name: price, label: Price, widget: string}
-              - {name: featured, label: Most popular?, widget: boolean, default: false}
-              - {name: features, label: Features, widget: list}
+              - {name: name, label: "Name", widget: string}
+              - {name: price, label: "Price", widget: string}
+              - {name: featured, label: "Most popular?", widget: boolean, default: false}
+              - {name: features, label: "Features", widget: list}
       - name: testimonials
         label: Testimonials (real ones only)
         file: src/data/testimonials.json
@@ -93,9 +149,9 @@ collections:
             widget: list
             required: false
             fields:
-              - {name: quote, label: Quote, widget: text}
-              - {name: name, label: Client name, widget: string}
-              - {name: business, label: Business, widget: string}
+              - {name: quote, label: "Quote", widget: text}
+              - {name: name, label: "Client name", widget: string}
+              - {name: business, label: "Business", widget: string}
   - name: blog
     label: Blog Posts
     folder: src/content/blog
@@ -104,7 +160,10 @@ collections:
     format: frontmatter
     slug: "{{slug}}"
     fields:
-      - {name: title, label: Title, widget: string}
-      - {name: date, label: Date, widget: datetime}
-      - {name: description, label: Short description, widget: string}
-      - {name: body, label: Body, widget: markdown}
+      - {name: title, label: "Title", widget: string}
+      - {name: date, label: "Date", widget: datetime}
+      - {name: description, label: "Short description", widget: string}
+      - {name: seoTitle, label: "SEO title (blank = use title)", widget: string, required: false}
+      - {name: seoDescription, label: "SEO description (blank = use short description)", widget: text, required: false}
+      - {name: image, label: "Share image", widget: image, required: false}
+      - {name: body, label: "Body", widget: markdown}
