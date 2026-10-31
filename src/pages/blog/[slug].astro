@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 export function getStaticPaths(){ return Object.entries(import.meta.glob('../../content/blog/*.md',{eager:true})).map(([f,m])=>({params:{slug:f.split('/').pop().replace('.md','')},props:{m}})); }
 const { m } = Astro.props; const Content=m.Content; const fm=m.frontmatter;
+const ld={"@context":"https://schema.org","@type":"BlogPosting",headline:fm.seoTitle||fm.title,description:fm.seoDescription||fm.description,datePublished:new Date(fm.date).toISOString()};
 ---
-<Layout title={fm.title} description={fm.description}><div class="page"><div class="wrap"><h1>{fm.title}</h1><p>{new Date(fm.date).toDateString()}</p></div></div>
+<Layout title={fm.seoTitle||fm.title} description={fm.seoDescription||fm.description} image={fm.image} type="article" jsonLd={ld}><div class="page"><div class="wrap"><h1>{fm.title}</h1><p>{new Date(fm.date).toDateString()}</p></div></div>
 <section><div class="wrap prose"><Content/><br><a class="btn" href="/contact">Get a free proposal</a></div></section></Layout>
