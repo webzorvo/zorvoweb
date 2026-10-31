@@ -1,4 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-// Change 'site' to your real domain before deploying (needed for sitemap/SEO)
-export default defineConfig({ site:'https://zorvoweb.com', integrations:[sitemap()], server:{host:true} });
+import fs from 'node:fs';
+// The website address comes from the CMS: SEO Settings > Website address
+const seo = JSON.parse(fs.readFileSync(new URL('./src/data/seo.json', import.meta.url), 'utf8'));
+export default defineConfig({ site: seo.siteUrl, integrations:[sitemap()], server:{host:true} });
