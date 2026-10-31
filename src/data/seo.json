@@ -1,0 +1,37 @@
+{
+ "siteUrl": "https://zorvoweb.webzorvo.workers.dev",
+ "defaultDescription": "ZorvoWeb builds fast, modern, search-friendly websites for local businesses, with booking forms, WhatsApp and Google setup included.",
+ "ogImage": "/og-image.png",
+ "gaId": "",
+ "gsc": "",
+ "pages": {
+  "home": {
+   "title": "ZorvoWeb | Web Design for Local Businesses",
+   "description": "Fast, modern websites for clinics, restaurants, gyms and local businesses. Booking forms, WhatsApp and Google setup included. Get a free proposal."
+  },
+  "services": {
+   "title": "Web Design & SEO Services",
+   "description": "Business website design, redesign, local SEO, booking forms, online stores and care plans for local businesses."
+  },
+  "portfolio": {
+   "title": "Our Work",
+   "description": "See demo websites we built for clinics, restaurants and gyms, and what we can build for your business."
+  },
+  "pricing": {
+   "title": "Website Pricing & Packages",
+   "description": "Clear website packages for small businesses: Starter, Business and Premium, with domain, hosting and SEO setup included."
+  },
+  "about": {
+   "title": "About Us",
+   "description": "ZorvoWeb is a small, hands-on web studio building websites that help local businesses get more calls and bookings."
+  },
+  "contact": {
+   "title": "Contact Us",
+   "description": "Tell us about your business and get a free website proposal within 24 hours."
+  },
+  "blog": {
+   "title": "Blog",
+   "description": "Website and local marketing tips for small business owners."
+  }
+ }
+}
