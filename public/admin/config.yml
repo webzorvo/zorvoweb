@@ -1,0 +1,110 @@
+backend:
+  name: github
+  repo: YOUR-USERNAME/zorvoweb   # change before deploying
+  branch: main
+local_backend: true              # local editing: run `npm run cms`
+media_folder: public/uploads
+public_folder: /uploads
+collections:
+  - name: pages
+    label: Website Content
+    files:
+      - name: site
+        label: Site Settings & Home Text
+        file: src/data/site.json
+        format: json
+        fields:
+          - {name: name, label: Brand name, widget: string}
+          - {name: tagline, label: Tagline, widget: string}
+          - {name: heroTitle, label: Home headline, widget: string}
+          - {name: heroText, label: Home intro text, widget: text}
+          - {name: about, label: About text, widget: text}
+          - {name: founder, label: Founder name, widget: string}
+          - {name: email, label: Email, widget: string}
+          - {name: phone, label: Phone, widget: string}
+          - {name: whatsapp, label: WhatsApp (digits only, no +), widget: string}
+          - {name: address, label: Location, widget: string}
+          - {name: web3formsKey, label: Web3Forms access key, widget: string}
+          - {name: facebook, label: Facebook URL, widget: string, required: false}
+          - {name: instagram, label: Instagram URL, widget: string, required: false}
+          - {name: linkedin, label: LinkedIn URL, widget: string, required: false}
+          - name: stats
+            label: Stats bar
+            widget: list
+            fields:
+              - {name: value, label: Value, widget: string}
+              - {name: label, label: Label, widget: string}
+      - name: services
+        label: Services
+        file: src/data/services.json
+        format: json
+        fields:
+          - name: items
+            label: Services
+            widget: list
+            fields:
+              - {name: title, label: Title, widget: string}
+              - {name: desc, label: Description, widget: text}
+      - name: process
+        label: Process Steps
+        file: src/data/process.json
+        format: json
+        fields:
+          - name: items
+            label: Steps
+            widget: list
+            fields:
+              - {name: title, label: Title, widget: string}
+              - {name: desc, label: Description, widget: text}
+      - name: portfolio
+        label: Portfolio
+        file: src/data/portfolio.json
+        format: json
+        fields:
+          - name: items
+            label: Projects
+            widget: list
+            fields:
+              - {name: title, label: Title, widget: string}
+              - {name: type, label: Type, widget: string}
+              - {name: desc, label: Description, widget: text}
+              - {name: url, label: Live demo URL (blank if none), widget: string, required: false}
+      - name: packages
+        label: Pricing Packages
+        file: src/data/packages.json
+        format: json
+        fields:
+          - {name: note, label: Pricing note, widget: string}
+          - name: items
+            label: Packages
+            widget: list
+            fields:
+              - {name: name, label: Name, widget: string}
+              - {name: price, label: Price, widget: string}
+              - {name: featured, label: Most popular?, widget: boolean, default: false}
+              - {name: features, label: Features, widget: list}
+      - name: testimonials
+        label: Testimonials (real ones only)
+        file: src/data/testimonials.json
+        format: json
+        fields:
+          - name: items
+            label: Testimonials
+            widget: list
+            required: false
+            fields:
+              - {name: quote, label: Quote, widget: text}
+              - {name: name, label: Client name, widget: string}
+              - {name: business, label: Business, widget: string}
+  - name: blog
+    label: Blog Posts
+    folder: src/content/blog
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    fields:
+      - {name: title, label: Title, widget: string}
+      - {name: date, label: Date, widget: datetime}
+      - {name: description, label: Short description, widget: string}
+      - {name: body, label: Body, widget: markdown}
