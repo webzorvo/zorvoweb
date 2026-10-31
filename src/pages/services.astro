@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro'; import sv from '../data/services.json';
+---
+<Layout title="Services" description="Web design, SEO, booking forms, online stores and care plans for local businesses."><div class="page"><div class="wrap"><h1>Our Services</h1><p>Everything your local business needs online.</p></div></div>
+<section><div class="wrap"><div class="grid">{sv.items.map((i,k)=><div class="card"><span class="n">0{k+1}</span><h3>{i.title}</h3><p>{i.desc}</p><br><a href="/contact">Get a quote &rarr;</a></div>)}</div></div></section></Layout>

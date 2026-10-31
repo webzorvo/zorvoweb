@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro'; import site from '../data/site.json'; import pr from '../data/process.json';
+---
+<Layout title="About" description={site.about}><div class="page"><div class="wrap"><h1>About {site.name}</h1><p>Hands-on web design for local businesses.</p></div></div>
+<section><div class="wrap prose"><h2>Who we are</h2><p>{site.about}</p><h2>Our promise</h2><ul><li>Clear prices and a written agreement before we start</li><li>You own your domain and content</li><li>Two revision rounds and 30 days of free support</li><li>Honest advice, even if you need a smaller package</li></ul>
+<h2>Founder</h2><p>{site.founder}, {site.address}</p><br><a class="btn" href="/contact">Talk to Us</a></div></section>
+<section class="alt"><div class="wrap"><h2>Our process</h2><br><div class="grid">{pr.items.map((i,k)=><div class="card"><span class="n">{k+1}</span><h3>{i.title}</h3><p>{i.desc}</p></div>)}</div></div></section></Layout>

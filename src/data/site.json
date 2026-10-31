@@ -1,0 +1,34 @@
+{
+  "facebook": "",
+  "heroText": "We design fast, modern, search-friendly websites for clinics, restaurants, gyms, contractors and other local businesses, with booking forms, WhatsApp and Google setup included.",
+  "name": "ZorvoWeb",
+  "about": "ZorvoWeb is a small, hands-on web studio. You work directly with the person building your site, no account managers and no hidden fees. We focus on one thing: websites that help local businesses get more calls, bookings and inquiries.",
+  "phone": "+92 3394008849",
+  "tagline": "Websites that bring customers to local businesses",
+  "web3formsKey": "22b09cb8-fa0a-407f-a1aa-d28576ba9026",
+  "founder": "zorvoweb",
+  "whatsapp": "923394008849",
+  "instagram": "",
+  "address": "Lahore, Pakistan",
+  "email": "webzorvo@gmail.com",
+  "linkedin": "",
+  "heroTitle": "Websites that turn local visitors into customers",
+  "stats": [
+    {
+      "value": "3",
+      "label": "Demo sites"
+    },
+    {
+      "value": "5-10",
+      "label": "Days to launch"
+    },
+    {
+      "value": "2",
+      "label": "Free revision rounds"
+    },
+    {
+      "value": "30",
+      "label": "Days free support"
+    }
+  ]
+}

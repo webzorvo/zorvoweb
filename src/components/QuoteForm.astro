@@ -1,0 +1,12 @@
+---
+import s from '../data/services.json';
+const { title='Speak to an expert today' } = Astro.props;
+---
+<form class="lead" method="post"><h3>{title}</h3>
+<input type="hidden" name="access_key" value=""><input type="hidden" name="subject" value="New website inquiry (ZorvoWeb)">
+<input type="checkbox" name="botcheck" style="display:none">
+<label>Name *</label><input name="name" required><label>Email *</label><input type="email" name="email" required>
+<label>Phone / WhatsApp</label><input name="phone"><label>Interested in</label>
+<select name="interest">{s.items.map(i=><option>{i.title}</option>)}</select>
+<label>Tell us about your business</label><textarea name="message" rows="3"></textarea>
+<button class="btn">Send My Free Proposal</button><p class="msg"></p></form>

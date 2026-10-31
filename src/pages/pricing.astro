@@ -1,0 +1,6 @@
+---
+import Layout from '../layouts/Layout.astro'; import pk from '../data/packages.json';
+---
+<Layout title="Pricing" description="Clear website packages for small businesses."><div class="page"><div class="wrap"><h1>Pricing</h1><p>{pk.note}</p></div></div>
+<section><div class="wrap"><div class="grid">{pk.items.map(p=><div class={`card ${p.featured?'feat':''}`}><h3>{p.name}</h3><div class="price">{p.price}</div><ul>{p.features.map(f=><li>{f}</li>)}</ul><a class="btn" href="/contact">Choose {p.name}</a></div>)}</div>
+<p class="sub" style="margin-top:24px">*After the first year, domain and hosting renew through an optional care plan. Extras such as content writing, logo design and online stores are quoted separately.</p></div></section></Layout>

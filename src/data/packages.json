@@ -1,0 +1,43 @@
+{
+  "note": "Prices in USD. Final quote depends on your needs.",
+  "items": [
+    {
+      "name": "Starter",
+      "price": "$99",
+      "featured": false,
+      "features": [
+        "1-page website",
+        "Mobile-friendly design",
+        "Contact form + WhatsApp button",
+        "Google Maps",
+        "1 year domain & hosting included*"
+      ]
+    },
+    {
+      "name": "Business",
+      "price": "$499",
+      "featured": true,
+      "features": [
+        "5-6 pages",
+        "Basic SEO + Google Business setup",
+        "Gallery + analytics",
+        "Social links",
+        "1 year domain & hosting included*",
+        "30 days free support"
+      ]
+    },
+    {
+      "name": "Premium",
+      "price": "$799",
+      "featured": false,
+      "features": [
+        "8-10 pages",
+        "Booking or catalog system",
+        "Advanced SEO + copywriting",
+        "Logo touch-up",
+        "1 year domain & hosting included*",
+        "30 days free support"
+      ]
+    }
+  ]
+}

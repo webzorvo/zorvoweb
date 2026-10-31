@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro'; import pf from '../data/portfolio.json';
+---
+<Layout title="Portfolio" description="Website demos and projects by ZorvoWeb."><div class="page"><div class="wrap"><h1>Our Work</h1><p>Demo projects and client sites.</p></div></div>
+<section><div class="wrap"><div class="grid">{pf.items.map(i=><div class="card"><span class="tag">{i.type}</span><h3>{i.title}</h3><p>{i.desc}</p><br>{i.url?<a class="btn" href={i.url}>View live demo</a>:<small>Demo in progress</small>}</div>)}</div></div></section></Layout>

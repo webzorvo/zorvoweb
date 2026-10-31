@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro'; import QuoteForm from '../components/QuoteForm.astro'; import site from '../data/site.json';
+---
+<Layout title="Contact" description="Get a free website proposal."><div class="page"><div class="wrap"><h1>Contact Us</h1><p>Tell us about your business. We reply within 24 hours.</p></div></div>
+<section><div class="wrap two"><QuoteForm title="Get your free proposal"/><div><h2>Talk to us directly</h2><br><p><b>Phone:</b> {site.phone}</p><p><b>Email:</b> <a href={`mailto:${site.email}`}>{site.email}</a></p><p><b>Location:</b> {site.address}</p><br><a class="btn" href={`https://wa.me/${site.whatsapp}`}>Chat on WhatsApp</a></div></div></section></Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro'; import QuoteForm from '../components/QuoteForm.astro';
+import site from '../data/site.json'; import sv from '../data/services.json'; import pr from '../data/process.json';
+import pf from '../data/portfolio.json'; import pk from '../data/packages.json'; import ts from '../data/testimonials.json';
+const posts=Object.entries(import.meta.glob('../content/blog/*.md',{eager:true})).map(([f,m])=>({slug:f.split('/').pop().replace('.md',''),...m.frontmatter})).sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,3);
+const w=site.heroTitle.split(' '); const a=w.slice(0,-2).join(' '), b=w.slice(-2).join(' ');
+const niches=['Clinics','Restaurants','Gyms','Salons','Contractors','Real Estate','Law Firms','Schools'];
+const stat=v=>{const m=String(v).match(/^(\d+)(.*)$/);return m&&!String(v).includes('-')?{c:m[1],s:m[2]}:null};
+---
+<Layout>
+<div class="hero"><div class="wrap hgrid"><div><div class="lbl"><i>01</i> Web design for local business</div>
+<h1>{a} <span class="g">{b}</span></h1><p>{site.heroText}</p>
+<div class="btns"><a class="btn" href="/contact">Book a Free Consultation</a><a class="btn ghost" href="/portfolio">See Our Work</a></div></div><QuoteForm/></div></div>
+<div class="marq"><div>{[...niches,...niches].map(n=><span>{n}</span>)}</div></div>
+<div class="stats"><div class="wrap">{site.stats.map(s=>{const t=stat(s.value);return <div class="rv"><b data-c={t?.c} data-s={t?.s}>{s.value}</b><span>{s.label}</span></div>})}</div></div>
+<section><div class="wrap two"><div class="rv"><div class="lbl"><i>02</i> Who we are</div><h2>A studio that treats <span class="g">your site</span> like its own</h2><p class="sub" style="margin-bottom:24px">{site.about}</p><a class="btn" href="/about">More About Us</a></div>
+<div class="grid rv" style="grid-template-columns:1fr 1fr">{['Mobile-first','SEO-ready','Fast loading','Secure & backed up'].map((t,i)=><div class="card"><span class="n">0{i+1}</span><h3>{t}</h3></div>)}</div></div></section>
+<section class="alt"><div class="wrap"><div class="lbl rv"><i>03</i> Services</div><h2 class="rv">Six services, <span class="g">one clear goal.</span></h2><p class="sub rv">Everything a local business needs to be found, trusted and contacted online.</p>
+<div class="rows">{sv.items.map((i,k)=><div class="row rv"><span class="n">0{k+1}</span><h3>{i.title}</h3><p>{i.desc}</p></div>)}</div></div></section>
+<section><div class="wrap two"><div class="rv"><div class="lbl"><i>04</i> How it works</div><h2>From first call to <span class="g">launch day.</span></h2><p class="sub">A simple, transparent process with no surprises.</p><a class="btn" href="/contact">Start Your Project</a></div>
+<div class="tl rv">{pr.items.map((i,k)=><div class="st" data-n={k+1}><h3>{i.title}</h3><p>{i.desc}</p></div>)}</div></div></section>
+<section class="alt"><div class="wrap"><div class="lbl rv"><i>05</i> Our work</div><h2 class="rv">Demos built for <span class="g">your industry.</span></h2><p class="sub rv">Real working demo sites that show what we can build for you.</p>
+<div class="grid">{pf.items.map(i=><div class="card rv"><div class="thumb"></div><span class="tag">{i.type}</span><h3>{i.title}</h3><p>{i.desc}</p><br>{i.url?<a href={i.url}>View live demo &rarr;</a>:<small style="color:var(--mut)">Demo in progress</small>}</div>)}</div></div></section>
+<section><div class="wrap"><div class="lbl rv"><i>06</i> Pricing</div><h2 class="rv">Simple, <span class="g">honest pricing.</span></h2><p class="sub rv">{pk.note}</p>
+<div class="grid">{pk.items.map(p=><div class={`card rv ${p.featured?'feat':''}`}><h3>{p.name}</h3><div class="price">{p.price}</div><ul>{p.features.map(f=><li>{f}</li>)}</ul><a class="btn" href="/contact">Choose {p.name}</a></div>)}</div></div></section>
+{ts.items.length>0&&<section class="alt"><div class="wrap"><div class="lbl rv"><i>07</i> Clients</div><h2 class="rv">What clients say</h2><br><div class="grid">{ts.items.map(t=><div class="card rv"><p>"{t.quote}"</p><br><b style="color:#fff">{t.name}</b><br><small>{t.business}</small></div>)}</div></div></section>}
+{posts.length>0&&<section class={ts.items.length>0?'':'alt'}><div class="wrap"><div class="lbl rv"><i>{ts.items.length>0?'08':'07'}</i> Blog</div><h2 class="rv">Latest insights</h2><br><div class="grid">{posts.map(p=><a class="card rv" href={`/blog/${p.slug}`} style="text-decoration:none"><h3>{p.title}</h3><p>{p.description}</p></a>)}</div></div></section>}
+<section class="cta"><div class="wrap rv"><h2>Ready to get your <span class="g">business online?</span></h2><p class="sub">Tell us about your business and get a free proposal within 24 hours.</p><a class="btn" href="/contact">Get My Free Proposal</a></div></section>
+</Layout>

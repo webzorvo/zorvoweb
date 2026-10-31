@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const posts=Object.entries(import.meta.glob('../../content/blog/*.md',{eager:true})).map(([f,m])=>({slug:f.split('/').pop().replace('.md',''),...m.frontmatter})).sort((a,b)=>new Date(b.date)-new Date(a.date));
+---
+<Layout title="Blog" description="Tips on websites and local marketing."><div class="page"><div class="wrap"><h1>Blog</h1><p>Website and local marketing tips.</p></div></div>
+<section><div class="wrap"><div class="grid">{posts.map(p=><a class="card" href={`/blog/${p.slug}`} style="text-decoration:none;color:inherit"><small>{new Date(p.date).toDateString()}</small><h3>{p.title}</h3><p>{p.description}</p></a>)}</div></div></section></Layout>
